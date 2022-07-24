@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import type { RootState } from '../store';
 import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment } from '../slices/counterSlice';
+import { decrement, increment, selectValue } from '../slices/counterSlice';
 
 const Home: NextPage = () => {
-  const count = useSelector((state: RootState) => state.counter.value);
+  const count = useSelector(selectValue);
   const dispatch = useDispatch();
 
   return (
